@@ -601,8 +601,8 @@ uint8_t _OLED_GetUTF8Len(char *string)
  */
 // void OLED_PrintString(uint8_t x, uint8_t y, char *str, const Font *font, OLED_ColorMode color)
 // void OLED_PrintString(uint8_t x, uint8_t y, char *str, uint8_t * Data, OLED_ColorMode color)
-#define PAGE_FONT_SIZE 37   //stm32f103c8t6只能一次读37个汉字的字模，太多了会导致OLED显示屏出现乱码，其他单片机可以试着更改数据，我没试过，但据我推测，但应该可以，单次读取的字模数量越多，汉字显示的速度越快
-#define NUMBER_FONT_SIZE 6763
+#define PAGE_FONT_SIZE 36   //stm32f103c8t6只能一次读36个汉字的字模，太多了会导致OLED显示屏出现乱码，其他单片机可以试着更改数据，我没试过，但据我推测，但应该可以，单次读取的字模数量越多，汉字显示的速度越快
+#define NUMBER_FONT_SIZE 9269 //字库里的字数
 void OLED_PrintString(uint8_t x, uint8_t y, char *str, OLED_ColorMode color)
 {
   uint16_t i = 0;                                       // 字符串索引

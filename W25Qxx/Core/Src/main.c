@@ -71,9 +71,9 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){
     sprintf(aa,"%d",a);
     OLED_PrintASCIIString(0,0,aa,&afont16x8,OLED_COLOR_NORMAL);
     OLED_DisplayRectangle(0,27,127,16,OLED_COLOR_NORMAL);
-    float x=(a*127/950);
+    float x=(a*127/1303);
     OLED_DisplayFilledRectangle(1,28,(int)round(x),15,OLED_COLOR_NORMAL);
-    x=(a/9.5);
+    x=(a/13.03);
     sprintf(aa,"%.2f%%",x);
     OLED_PrintASCIIString(64,0,aa,&afont16x8,OLED_COLOR_NORMAL);
     OLED_Show();
@@ -120,7 +120,7 @@ int main(void)
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
   OLED_Init();
-
+  HAL_GPIO_WritePin(GPIOC,GPIO_PIN_13,GPIO_PIN_RESET);
   /***********************************擦除整个芯片，阻塞进程，大概要等待十几秒*********************************/
   W25QXX_Erase_chip();
   uint8_t massage1[36];
@@ -141,13 +141,10 @@ int main(void)
   // OLED_PrintString(0,16,"我花开后百花杀.",OLED_COLOR_NORMAL);
   // OLED_PrintString(0,32,"冲天香阵透长安,",OLED_COLOR_NORMAL);
   // OLED_PrintString(0,48,"满城尽带黄金甲.",OLED_COLOR_NORMAL);
-  // OLED_PrintString(0,0,"葡萄美酒夜光杯,",OLED_COLOR_NORMAL);
-  // OLED_PrintString(0,16,"欲饮琵琶马上催.",OLED_COLOR_NORMAL);
-  // OLED_PrintString(0,32,"醉卧沙场君莫笑,",OLED_COLOR_NORMAL);
-  // OLED_PrintString(0,48,"古来征战几人回.",OLED_COLOR_NORMAL);
-
+  // OLED_Show();
   while (1)
   {
+
 
     /* USER CODE END WHILE */
 

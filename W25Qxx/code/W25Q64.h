@@ -20,7 +20,7 @@
 
 
 
-
+ 
 static HAL_StatusTypeDef SPI_Transmit(uint8_t* send_buf, uint16_t size);//向 SPI Flash 发送数据的函数
 static HAL_StatusTypeDef SPI_Receive(uint8_t* recv_buf, uint16_t size);//从 SPI Flash 接收数据的函数
 static HAL_StatusTypeDef SPI_TransmitReceive(uint8_t* send_buf, uint8_t* recv_buf, uint16_t size);//发送数据的同时读取数据的函数
